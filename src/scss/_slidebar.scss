@@ -1,0 +1,43 @@
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background-color: transparent;
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 68.75em) {
+    @content;
+  }
+}
+
+#fp-nav.fp-right{
+  right: 3%;
+  display: none;
+  @include desktop {
+    display: block;
+  }
+}
+
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
+.navigation-content{
+  position: absolute !important;
+  padding: 9px 10px !important;
+  border-radius: 50%;
+  color: white;
+  font-weight: 900;
+  background-color: transparent !important;
+  @include transition-ease;
+  &:hover{
+    background-color: transparent !important;
+  }
+}
+.navigation-link{
+  @include transition-ease;
+}
+.navigation-link.active{
+  @include transition-ease;
+  .navigation-content{
+    background-color: #805434 !important;
+  }
+}
